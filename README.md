@@ -200,3 +200,87 @@ React Project Folders Structure
 
 
 بهذا الشكل اصبحنا جاهزين للتطبيق. 
+
+
+تمرير البيانات باستخدام Props في Class Component
+قد نوّد أحيانًا بإرسال معلومات معينة من المكوّن الحالي إلى مكوّنات أخرى. لتفيذ لذلك نستعمل props وهي اختصار properties وتعني الخاصيّات.
+
+في مثال البطاقات السابق قمنا بعمل مكوّن خاص بالبطاقة واستدعاءه ثلاث مرات،  لكن نلاحظ أن البطاقات لديها نفس النص تمامًا.
+
+![](https://paper-attachments.dropbox.com/s_98D1845A477E4A5082D5B05A6560C847E94353C2BDD180721312327B0F8A02F7_1626797722244_Screenshot+2021-07-19+214248.png)
+
+
+والسبب أن جميع البطاقات تنفذ نفس الكود الخاص بالمكوّن دون تغيير.
+
+
+    import React, { Component } from 'react';
+    import picture from './picture.png';
+    export default class Card extends Component {
+      render() {
+        return (
+          <div id="card-container">
+            <div className="card-header"></div>
+            <img src={picture} alt="Picture" />;
+            <h1>Name</h1>
+            <h2>Describtion should be written here</h2>
+          </div>
+       );
+      }
+    }
+
+
+    import React, { Component } from 'react';
+    import picture from './picture.png';
+    import Card from './Card'
+    export default class App extends Component {
+      render() {
+        return (
+          <div>
+            <Card />
+            <Card />
+            <Card />
+          </div>
+        );
+      }
+    }
+
+لتفادي هذه المشكلة سنستعمل props مع الاسم في مكوّن البطاقة لجعل الاسم متغيرًا وقابل للتمرير.
+
+
+    import React, { Component } from 'react';
+    import picture from './picture.png';
+    export default class Card extends Component {
+      render() {
+        return (
+          <div id="card-container">
+            <div className="card-header"></div>
+            <img src={picture} alt="Picture" />;
+            <h1>{this.props.name}</h1>
+            <h2>Describtion should be written here</h2>
+          </div>
+       );
+      }
+    }
+
+وعند استدعاء المكوّن نحدد خاصية name التي قمنا بربطها مع props.
+
+
+    import React, { Component } from 'react';
+    import picture from './picture.png';
+    import Card from './Card'
+    export default class App extends Component {
+      render() {
+        return (
+          <div>
+            <Card name="Sana" />
+            <Card name="Ahmed" />
+            <Card name="Adam" />
+          </div>
+        );
+      }
+    }
+
+
+    وبهذا قمنا بتكرار مكوّن البطاقات ثلاث مرات ولكن بتغيير الاسم في كلٍ منها.
+![](https://paper-attachments.dropbox.com/s_98D1845A477E4A5082D5B05A6560C847E94353C2BDD180721312327B0F8A02F7_1626798592023_Screenshot+2021-07-20+191823.png)
+
