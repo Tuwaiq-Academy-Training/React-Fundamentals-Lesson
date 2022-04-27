@@ -199,7 +199,35 @@ React Project Folders Structure
 
 
 
-بهذا الشكل اصبحنا جاهزين للتطبيق. 
+بهذا الشكل اصبحنا جاهزين للتطبيق
+مفهوم المكونات Component
+
+
+مقدمة
+
+هو وحدة البناء الأساسية في مشاريع React والتي تهدف إلى كتابة كود JSX في ملف واستدعاءه في ملف آخر، مما يُسهل التكرار وإعادة الاستعمال.
+
+مثال: في حال كنت ترغب بإضافة ثلاث بطاقات منشابهة في موقعك بهذا الشكل
+
+![](https://paper-attachments.dropbox.com/s_79DAFA88A67D5FB6DCF33EB8376EA074812F9BE62D55FBC8F301A32760C81D3D_1626721003077_Screenshot+2021-07-19+214248.png)
+
+
+بدلًا من نسخ ولصق كود البطاقة ثلاث مرات بهذه الطريقة المُجهدة
+
+![](https://paper-attachments.dropbox.com/s_79DAFA88A67D5FB6DCF33EB8376EA074812F9BE62D55FBC8F301A32760C81D3D_1626721009888_Screenshot+2021-07-19+215137.png)
+
+
+يمكنك كتابة كود البطاقة مرة واحدة في مكوّن واستدعاء ذاك المكوّن ثلاث مرات. 
+
+![](https://paper-attachments.dropbox.com/s_79DAFA88A67D5FB6DCF33EB8376EA074812F9BE62D55FBC8F301A32760C81D3D_1626721017356_Screenshot+2021-07-19+215623.png)
+
+
+هناك نوعان أساسيان من المكوّنات في React سنتعرف عليهما في الدرسين القادمين:
+
+
+- Functional Components.
+- Class Components.
+. 
 
 
 تمرير البيانات باستخدام Props في Class Component
