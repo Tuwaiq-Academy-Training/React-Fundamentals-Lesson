@@ -84,4 +84,119 @@ React Project Folders Structure
 - ملف package.json يحتوي على كل الحُزم والمكتبات التي تم تنزيلها في المشروع.
 - في ملف README.md نستطيع كتابة وصف المشروع.
 
+
+عناصر React
+
+العناصر في React هي عبارة عن كائن object يمثل وصف جزء من UI حيث إن العنصر يمثل أصغر وحدة في بناء واجهة المستخدم في React ويمكننا انشاء العنصر باستخدام الدّالة createElement.
+
+تعريف دالّة createElement
+
+    React.createElement(type, properties, [...children])
+
+نلاحظ أن دالة `createElement` تستقبل ثلاث مدخلات المدخل الأول `type` يمثل نوع العنصر أما المدخل الثاني `properties` يمثل خصائص العنصر مثل `id` وغيرها، أما المدخل الثالث ومابعده `children` يمثل محتوى العنصر مثل النّص ان كان يحتوي العنصر على نص او عنصر آخر.
+
+مثال
+
+    const element = React.createElement("h1", null, "Welcome to React");
+
+نلاحظ أننا قمنا بتمرير ثلاث قيم لدالة `createElement` حيث أن قيمة المدخل الأول `h1` تمثل نوع العنصر، بينما قيمة المدخل الثاني `null` تمثل خصائص العنصر وآخر قيمة المدخل الثالث `Welcome to React` تمثل محتوى العنصر.
+
+
+إضافة خصائص لعنصر React
+لنفترض أننا نريد إضافة خاصية لعنصر React، نقوم بذلك عن طريق كتابة اسم الخاصية ومن ثم قيمتها داخل object الخصائص كما هو موضح في المثال التالي:
+
+    const element = React.createElement("a", {
+      href: "https://reactjs.org"
+    }, "Hello React");
+
+في المثال السابق قمنا بإضافة `href` إلى العنصر وذلك عن طريق كتابة اسم الخاصية وقيمته في object الخصائص.
+
+
+
+إنشاء عنصر React يحتوي على عناصر React أخرى
+كما ذكرنا سابقًا أن المدخل الثالث لدالة `createElement` التي بداخل `React` تمثل المحتوى لهذا العنصر لذلك من الممكن أن يكون محتوى عنصر ماهو عبارة عن عنصر آخر لتوضيح هذهِ الفكرة نلاحظ المثال التالي:
+
+    const elementOne = React.createElement("h1", null, "Welcome to React");
+    const elementTwo = React.createElement("p", null, "React is a JavaScript library for building user interfaces")
+    const element = React.createElement("div", null, elementOne, elementTwo);
+
+في المثال السابق في السطر الأول قمنا بإنشاء عنصر `elementOne` أما في السطر 2 قمنا بإنشاء عنصر آخر `elementTwo` في السطر 3 قمنا بإنشاء عنصر ووضعنا محتواه عنصر `childElementOne` و `childElementTwo`.
+
+
+إنشاء عنصر React بإستخدام JSX
+تتشابه طريقة إنشاء عنصر React بإستخدام JSX لطريقة إنشاء عنصر في HTML. لتوضيح هذه الفكرة نلاحظ السطر التالي:
+
+    const element = <h1>Welcome to React</h1>;
+
+في السطر السابق قمنا بإنشاء عنصر React من نوع `h1` محتواه هو `Welcome to React`.
+
+
+إضافة خصائص لعنصر React باستخدام JSX
+طريقة إضافة خاصية إلى عنصر React باستخدام JSX هي مشابهة لطريقة إضافة خاصية إلى عنصر في HTML ولتوضيح هذهِ الفكرة نلاحظ السطر التالي:
+
+    const element = <a href="https://reactjs.org">Hello React</a>;
+
+في المثال السابق قمنا بإضافة `href` إلى العنصر وذلك عن طريق كتابة اسم الخاصية وقيمته داخل start tag.
+
+
+
+إنشاء عنصر React يحتوي على عناصر React باستخدام JSX
+طريقة إنشاء عنصر React يحتوي على عنصر React آخر هي مشابهة لطريقة إنشاء عنصر داخل عنصر في HTML ولتوضيح هذهِ الفكرة نلاحظ المثال التالي:
+
+    const element = <div>
+                        <h1>Welcome to React</h1>
+                        <p>React is a JavaScript library for building user interfaces</p>
+                    </div>;
+
+في المثال السابق قمنا بإنشاء عنصر React يحتوي على عنصرين آخرين. 
+ملاحظة: في JSX إذا كان لديك أكثر من عنصر يجب تضمينهم داخل عنصر واحد.
+
+
+
+تعبيرات JSX المتغيرات
+يمكنك كتابة متغير أو ثابت داخل JSX وذلك عن طريق تضمينه داخل القوسين `{}` كما هو موضح في المثال التالي:
+
+    const name = "Omar";
+    const element = <h1> Hello my name is {name}</h1>;
+
+لاحظ في السطر الثاني قمنا بتضمين الثابت `name` داخل JSX. المصدر
+
+
+
+تعبيرات JSX عامل الشرط الثلاثي
+يمكنك أيضًا كتابة عامل الشرط الثلاثي بداخل JSX وذلك عن طريق تضمينه داخل `{}` كما في السطر الثاني:
+
+    const age = 17;
+    const message = <p>{age >= 18 ? "You can drive" : "You cannot drive"}</p>
+
+في السطر الثاني ستكون قيمة محتوى عنصر React هي `You cannot drive` وذلك لأن نتيجة الشرط هي `false`.
+
+
+
+تعبيرات JSX دوال المصفوفات
+يمكنك أيضًا كتابة دوال المصفوفات داخل JSX وذلك عن طريق تضمينها داخل القوسين `{}` كما في المثال التالي:
+
+    const colors = ["red", "green", "blue"];
+    const colorsList = <ul> {colors.map( (color, index) => <li key={index}>{color}</li> )} </ul>
+
+في السطر الثاني ستكون نتيجة المصفوفة الجديدة عبارة عن عناصر React نوعها `li` ومن ثم سيتم إدخال العناصر داخل العنصر `ul`.
+ملاحظة: كل عنصر في المصفوفة يجب أن تضاف مع قيمة فريدة من نوعها تسند لخاصية `key` لأجل أن يتم عرض وصف UI بشكل مناسب لذلك استخدمنا index العنصر كقيمة فريدة.
+
+
+
+إدخال عنصر React إلى DOM
+لإدخال عنصر React داخل DOM يتم استدعاء الدالة `render` وتقوم هذهِ الدالة بوضع عنصر React داخل الحاوية -الحاوية تكون موجودة في DOM - وهي المكان المراد إدخال عنصر React داخلها، توضح الصيغة التالية كيفية القيام بذلك:
+
+    ReactDOM.render(element, container)
+
+نلاحظ دالة `render` تستقبل مدخلين حيث أن المدخل الأول `element` يمثل العنصر أما المدخل الثاني يمثل `container` -حيث أن هذا `container` موجود DOM- الذي سيحتضن `element`.
+نلاحظ تطبيقها في المثال التالي:
+
+    const container = document.getElementById("root");
+    ReactDOM.render(element, container);
+
+نلاحظ أن الدالة `render` تستقبل مدخلين حيث أن المدخل الأول `element` يمثل عنصر React أما المدخل الثاني يمثل الحاوية `container` الذي سيحتضن `element`.
+
+
+
 بهذا الشكل اصبحنا جاهزين للتطبيق. 
