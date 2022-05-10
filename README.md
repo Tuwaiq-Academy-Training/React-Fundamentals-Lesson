@@ -162,7 +162,7 @@ React Project Folders Structure
 في المثال السابق في السطر الأول قمنا بإنشاء عنصر `elementOne` أما في السطر 2 قمنا بإنشاء عنصر آخر `elementTwo` في السطر 3 قمنا بإنشاء عنصر ووضعنا محتواه عنصر `childElementOne` و `childElementTwo`.
 
 
-إنشاء عنصر React بإستخدام JSX
+#إنشاء عنصر React بإستخدام JSX
 تتشابه طريقة إنشاء عنصر React بإستخدام JSX لطريقة إنشاء عنصر في HTML. لتوضيح هذه الفكرة نلاحظ السطر التالي:
 
     const element = <h1>Welcome to React</h1>;
@@ -170,7 +170,7 @@ React Project Folders Structure
 في السطر السابق قمنا بإنشاء عنصر React من نوع `h1` محتواه هو `Welcome to React`.
 
 
-إضافة خصائص لعنصر React باستخدام JSX
+#إضافة خصائص لعنصر React باستخدام JSX
 طريقة إضافة خاصية إلى عنصر React باستخدام JSX هي مشابهة لطريقة إضافة خاصية إلى عنصر في HTML ولتوضيح هذهِ الفكرة نلاحظ السطر التالي:
 
     const element = <a href="https://reactjs.org">Hello React</a>;
