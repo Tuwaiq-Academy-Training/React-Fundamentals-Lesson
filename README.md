@@ -162,7 +162,8 @@ React Project Folders Structure
 في المثال السابق في السطر الأول قمنا بإنشاء عنصر `elementOne` أما في السطر 2 قمنا بإنشاء عنصر آخر `elementTwo` في السطر 3 قمنا بإنشاء عنصر ووضعنا محتواه عنصر `childElementOne` و `childElementTwo`.
 
 
-#إنشاء عنصر React بإستخدام JSX
+# إنشاء عنصر React بإستخدام JSX
+
 تتشابه طريقة إنشاء عنصر React بإستخدام JSX لطريقة إنشاء عنصر في HTML. لتوضيح هذه الفكرة نلاحظ السطر التالي:
 
     const element = <h1>Welcome to React</h1>;
@@ -170,7 +171,8 @@ React Project Folders Structure
 في السطر السابق قمنا بإنشاء عنصر React من نوع `h1` محتواه هو `Welcome to React`.
 
 
-#إضافة خصائص لعنصر React باستخدام JSX
+# إضافة خصائص لعنصر React باستخدام JSX
+
 طريقة إضافة خاصية إلى عنصر React باستخدام JSX هي مشابهة لطريقة إضافة خاصية إلى عنصر في HTML ولتوضيح هذهِ الفكرة نلاحظ السطر التالي:
 
     const element = <a href="https://reactjs.org">Hello React</a>;
@@ -179,7 +181,7 @@ React Project Folders Structure
 
 
 
-إنشاء عنصر React يحتوي على عناصر React باستخدام JSX
+# إنشاء عنصر React يحتوي على عناصر React باستخدام JSX
 طريقة إنشاء عنصر React يحتوي على عنصر React آخر هي مشابهة لطريقة إنشاء عنصر داخل عنصر في HTML ولتوضيح هذهِ الفكرة نلاحظ المثال التالي:
 
     const element = <div>
@@ -192,7 +194,7 @@ React Project Folders Structure
 
 
 
-تعبيرات JSX المتغيرات
+# تعبيرات JSX المتغيرات
 يمكنك كتابة متغير أو ثابت داخل JSX وذلك عن طريق تضمينه داخل القوسين `{}` كما هو موضح في المثال التالي:
 
     const name = "Omar";
@@ -202,7 +204,7 @@ React Project Folders Structure
 
 
 
-تعبيرات JSX عامل الشرط الثلاثي
+#تعبيرات JSX عامل الشرط الثلاثي
 يمكنك أيضًا كتابة عامل الشرط الثلاثي بداخل JSX وذلك عن طريق تضمينه داخل `{}` كما في السطر الثاني:
 
     const age = 17;
@@ -212,7 +214,7 @@ React Project Folders Structure
 
 
 
-تعبيرات JSX دوال المصفوفات
+# تعبيرات JSX دوال المصفوفات
 يمكنك أيضًا كتابة دوال المصفوفات داخل JSX وذلك عن طريق تضمينها داخل القوسين `{}` كما في المثال التالي:
 
     const colors = ["red", "green", "blue"];
@@ -223,7 +225,7 @@ React Project Folders Structure
 
 
 
-إدخال عنصر React إلى DOM
+# إدخال عنصر React إلى DOM
 لإدخال عنصر React داخل DOM يتم استدعاء الدالة `render` وتقوم هذهِ الدالة بوضع عنصر React داخل الحاوية -الحاوية تكون موجودة في DOM - وهي المكان المراد إدخال عنصر React داخلها، توضح الصيغة التالية كيفية القيام بذلك:
 
     ReactDOM.render(element, container)
