@@ -63,7 +63,9 @@ Virtual DOM
 
 
 
-ابدأ مع React
+
+
+# ابدأ مع React
 
 للبدء مع React دعونا أولا ننشئ مجلّد بداخله ملف html من ثمّ التطبيق على كيفيّة البدء باستخدام React كالتالي.
 
@@ -91,7 +93,7 @@ CDN
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
 
 
-مثال
+**مثال**
 
     <html>
         <head>
@@ -103,6 +105,11 @@ CDN
     </html>
     
 ![](https://paper-attachments.dropbox.com/s_AF539446F48191BDC6D15DF619AB61846567F12988213478724D17088942E1BE_1627566668395_Screen+Shot+1442-12-19+at+4.51.04+PM.png)
+
+
+بهذا الشكل اصبحنا جاهزين للتطبيق. 
+
+
 
 React Project Folders Structure
 
