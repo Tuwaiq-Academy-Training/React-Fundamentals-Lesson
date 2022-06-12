@@ -268,7 +268,7 @@ React Project Folders Structure
 ![](https://paper-attachments.dropbox.com/s_79DAFA88A67D5FB6DCF33EB8376EA074812F9BE62D55FBC8F301A32760C81D3D_1626721017356_Screenshot+2021-07-19+215623.png)
 
 
-هناك نوعان أساسيان من المكوّنات في React سنتعرف عليهما في الدرسين القادمين:
+هناك نوعان أساسيان من المكوّنات في React سنتعرف عليهما :
 
 
 - Functional Components.
@@ -286,6 +286,7 @@ React Project Folders Structure
 
 والسبب أن جميع البطاقات تنفذ نفس الكود الخاص بالمكوّن دون تغيير.
 
+* Class Component
 
     import React, { Component } from 'react';
     import picture from './picture.png';
@@ -354,6 +355,77 @@ React Project Folders Structure
       }
     }
 
+
+* Function Component 
+```js
+
+    import React from 'react';
+    import picture from './picture.png';
+    export default function Card  {
+     
+        return (
+          <div id="card-container">
+            <div className="card-header"></div>
+            <img src={picture} alt="Picture" />;
+            <h1>Name</h1>
+            <h2>Describtion should be written here</h2>
+          </div>
+       );
+      
+    }
+
+
+    import React from 'react';
+    import picture from './picture.png';
+    import Card from './Card'
+    export default function App  {
+      render() {
+        return (
+          <div>
+            <Card />
+            <Card />
+            <Card />
+          </div>
+        );
+      }
+    }
+    
+
+
+
+
+    import React from 'react';
+    import picture from './picture.png';
+    export default function Card  {
+      
+        return (
+          <div id="card-container">
+            <div className="card-header"></div>
+            <img src={picture} alt="Picture" />;
+            <h1>{this.props.name}</h1>
+            <h2>Describtion should be written here</h2>
+          </div>
+       );
+      
+    }
+
+
+
+    import React from 'react';
+    import picture from './picture.png';
+    import Card from './Card'
+    export default function App  {
+      render() {
+        return (
+          <div>
+            <Card name="Sana" />
+            <Card name="Ahmed" />
+            <Card name="Adam" />
+          </div>
+        );
+      }
+    }
+```
 
     وبهذا قمنا بتكرار مكوّن البطاقات ثلاث مرات ولكن بتغيير الاسم في كلٍ منها.
 ![](https://paper-attachments.dropbox.com/s_98D1845A477E4A5082D5B05A6560C847E94353C2BDD180721312327B0F8A02F7_1626798592023_Screenshot+2021-07-20+191823.png)
