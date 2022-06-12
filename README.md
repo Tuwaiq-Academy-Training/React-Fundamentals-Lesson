@@ -356,7 +356,7 @@ React Project Folders Structure
     }
 
 
-* Function Component 
+* Functional Component 
 ```js
 
     import React from 'react';
@@ -379,7 +379,7 @@ React Project Folders Structure
     import picture from './picture.png';
     import Card from './Card'
     export default function App  {
-      render() {
+      
         return (
           <div>
             <Card />
@@ -387,7 +387,7 @@ React Project Folders Structure
             <Card />
           </div>
         );
-      }
+      
     }
     
 
@@ -396,13 +396,13 @@ React Project Folders Structure
 
     import React from 'react';
     import picture from './picture.png';
-    export default function Card  {
+    export default function Card (props)  {
       
         return (
           <div id="card-container">
             <div className="card-header"></div>
             <img src={picture} alt="Picture" />;
-            <h1>{this.props.name}</h1>
+            <h1>{props.name}</h1>
             <h2>Describtion should be written here</h2>
           </div>
        );
@@ -412,10 +412,9 @@ React Project Folders Structure
 
 
     import React from 'react';
-    import picture from './picture.png';
     import Card from './Card'
     export default function App  {
-      render() {
+     
         return (
           <div>
             <Card name="Sana" />
@@ -423,7 +422,7 @@ React Project Folders Structure
             <Card name="Adam" />
           </div>
         );
-      }
+      
     }
 ```
 
